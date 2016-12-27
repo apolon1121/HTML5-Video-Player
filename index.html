@@ -3,8 +3,31 @@
 <head>
 </head>
 <body>
-  <video src="http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4" controls>
+  <div id="player">
+    <div id="video-container">
+      <video width="450"
+        poster="https://www.bloomberg.com/graphics/2015-elon-musk-spacex/img/musk_final.jpg">
+        <source
+          src="http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_1mb.mp4">
+          It seems your browser doesn`t support HTML5 video tag
+     </video>
+    </div>
 
-  </video>
+    <div id="progressbar-container">
+      <div id="progressbar"></div>
+    </div>
+    <div id="buttons-container">
+      <img id="play-button" src="images/play.png">
+      <div id="time-field">
+        00:00/00:00
+      </div>
+      <img id="sound-button" src="images/sound.png">
+      <div id="sbar-container">
+        <div id="sbar"></div>
+      </div>
+      <img id="fullscreen-button" src="images/fullscreen.png">
+    </div>
+  </div>
+
 </body>
 </html>
