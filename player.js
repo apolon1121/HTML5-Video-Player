@@ -27,4 +27,10 @@ function playOrPause() {
 function updatePlayer() {
   var percentage = (video.currentTime/video.duration)*100;
   progressbar.style.width=percentage+'%';
+
+  if(video.ended) {
+    window.clearInterval(update);
+    playButton.src = 'images/replay.png';
+  }
+
 }
