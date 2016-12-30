@@ -39,7 +39,7 @@ video {
 }
 
 #progressbar {
-  width:50%;
+  width:0%;
   height:7px;
 
   background-color: rgb(50,170,220);
