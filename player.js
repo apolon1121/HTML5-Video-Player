@@ -5,6 +5,9 @@ window.addEventListener('load',function() {
   progressbarContainer = document.getElementById('progressbar-container');
   progressbar = document.getElementById('progressbar');
   timeField = document.getElementById('time-field');
+  soundButton = document.getElementById('sound-button');
+  sbarContainer = document.getElementById('sbar-container');
+  sbar = document.getElementById('sbar');
 
   video.load();
   video.addEventListener('canplay',function() {
@@ -12,6 +15,8 @@ window.addEventListener('load',function() {
     playButton.addEventListener('click',playOrPause, false);
     progressbarContainer.addEventListener('click',skip, false);
     updatePlayer();
+    soundButton.addEventListener('click', muteOrUnmute, false);
+    sbarContainer.addEventListener('click', changeVolume, false);
 
   }, false);
 
@@ -60,4 +65,24 @@ function getFormattedTime() {
   if(totalSeconds.toString().length===1) totalSeconds = '0'+totalSeconds;
 
   return minutes+':'+seconds+' / '+totalMinutes+':'+totalSeconds;
+}
+
+
+function muteOrUnmute() {
+  if (!video.muted) {
+    video.muted = true;
+    soundButton.src = 'images/mute.png';
+  } else {
+    video.muted =  false;
+    soundButton.src = 'images/sound.png';
+  }
+}
+
+function changeVolume(event) {
+    var mouseX = event.pageX - sbarContainer.offsetLeft;
+    var width = window.getComputedStyle(sbarContainer).getPropertyValue('width');
+    width = parseFloat(width.substr(0, width.length-2));
+
+    video.volume = (mouseX/width);
+    sbar.style.width = (mouseX/width)*100+'%';
 }
