@@ -25,6 +25,7 @@ img, #progressbar-container, #sbar, #sbar-container {
 #video-container {
   width:640px;
   height:360px;
+  background-color: #00000;
 }
 
 video {
