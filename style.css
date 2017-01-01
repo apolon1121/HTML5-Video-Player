@@ -26,12 +26,26 @@ img, #progressbar-container, #sbar, #sbar-container {
   width:640px;
   height:360px;
   background-color: #00000;
+  position: relative;
 }
 
 video {
   width:100%;
   height:100%;
   background-color: #000000;
+}
+
+#screen {
+  height: 100%;
+  width: 100%;
+  text-align:center;
+  line-height: 360px;
+  position: absolute;
+  z-index: 1 !important;
+}
+
+#screen img {
+  vertical-align: middle;
 }
 
 #progressbar-container {
