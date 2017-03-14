@@ -1,5 +1,5 @@
 window.addEventListener('load',function() {
-
+  //-variables
   video = document.getElementById('video');
   playButton = document.getElementById('play-button');
   pauseScreen = document.getElementById('screen');
